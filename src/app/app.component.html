@@ -1,24 +1,37 @@
 <div class="container">
-  <div id="alert" class="alert alert-success" role="alert" [hidden]="!adicionado">
-<!--
- 
- *ngIf=> diretiva estrutural (*) obrigatorio  e modifica a estrutura do DOM
- *ngIf="(condicão para o elemento ser adcionado no dom)"
+      <div id="alert" class="alert alert-success" role="alert" [hidden]="!adicionado">
+        <!--
+          *ngIf=> diretiva estrutural (*) obrigatorio  e modifica a estrutura do DOM
+          *ngIf="(condicão para o elemento ser adcionado no dom)"
 
- [hidden] - não modifica a estrutura , apenas oculta o elemento. 
--->
+          [hidden] - não modifica a estrutura , apenas oculta o elemento. 
+        -->
 
-    <span> Funcionario adicionado : <strong>{{nome}}</strong> </span>
-  </div>
-  <div class="form-group">
-    <div id="Inputs"> 
-      <label>Nome</label>
-      <input type="text" class="form-control" [(ngModel)]="nome"
-      (focus)="adicionado=false">
-    </div>
+          <span> Funcionario adicionado : <strong>{{nome}}</strong> </span>
+      </div>
+      <div class="form-group">
+        <div id="Inputs">
+          <label>Nome</label>
+          <input type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado=false"/>
+        </div>
 
-  </div>
+      </div>
 
-  <button type="button" class="btn btn-primary" (click)="adicionar()"
-    [disabled]="nome.length == 0">adcionar</button>
+      <button type="button" class="btn btn-primary" (click)="adicionar()" [disabled]="nome.length == 0">adcionar</button>
+
+      <div class="row" style="margin-top: 20px;">
+
+        <div class="col-2" style="margin-bottom: 20px;"  *ngFor="let funcionario of funcionarios">
+          <div class="card">
+            <img class="card-img-top" src="https://randomuser.me/api/portraits/men/{{funcionario.id}}.jpg" alt="...">
+            <div class="card-body">
+              <h4>{{funcionario.nome}}</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
 </div>
