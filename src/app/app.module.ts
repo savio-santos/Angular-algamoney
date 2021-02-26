@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { FormsModule } from '@angular/forms';
 import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
+import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
-        FuncionarioCardComponent
+        FuncionarioCardComponent,
+        FuncionarioFormComponent
   ],
   imports: [
     BrowserModule,
