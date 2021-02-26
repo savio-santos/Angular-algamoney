@@ -21,4 +21,19 @@ getStylosCartao(){
   };
 }
 
+isAdmin(){
+  return this.funcionario.nome.startsWith('T');
+}
+
+
+
+
+
+
+
+
+getClassesCss(){
+
+}
+
 }

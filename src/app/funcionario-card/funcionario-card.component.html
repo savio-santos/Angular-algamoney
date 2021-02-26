@@ -1,7 +1,13 @@
 <div class="card" [ngStyle]="getStylosCartao()">
     <img class="card-img-top" src="https://randomuser.me/api/portraits/men/{{funcionario.id}}.jpg" alt="...">
-    <div class="card-body">
-      <h4 style="text-align: center;">{{funcionario.nome}}</h4>
+    <div class="card-body" style="align-items: center;">
+      
+      <span class="badge" [ngClass] = "{ 'badge-danger': isAdmin(), 'badge-primary': !isAdmin()}"> 
+        
+          <h6 >{{funcionario.nome}}</h6>
+      </span>
+      
+      
       
        </div>
   </div>
